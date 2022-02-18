@@ -1,28 +1,32 @@
 "use strict";
 
-// const box = document.getElementById("box");
+const box = document.getElementById("box"); // Через id. Только один на странице
+console.log(box);
 
-// console.log(box);
+// const btns = document.getElementsByTagName("button")[1]; // Через тег, теперь мы получаем псевдомассив в котором все теги button
+// console.log(btns);
+// теперь чтобы получить оприделенный элемент нужно указать его индекс
+const btns = document.getElementsByTagName("button");
+console.log(btns[2]);
+// Если среди искомых тегов будет только один тег, то всеравно это будет псевдомассив но только с одним эллементом
 
-// const btns = document.getElementsByTagName("button");
-// // const btns = document.getElementsByTagName("button")[2];
+// Через Class. Получаем все эллементы через определенный класс
+const circles = document.getElementsByClassName("circle");
+console.log(circles);
 
-// // Получаем HTML collection псевдомассив
-// console.log(btns[3]);
+// Более современные методы получения элементов со страници
+// (Во внутрь круглых скобок мы помещаем CSSселектор. Всегда указивается через точку!!!!!)
+// в querySelectorAll появляется метод ForEach
 
-// const cir = document.getElementsByClassName("circle");
-// console.log(cir);
+const hearts = document.querySelectorAll(".heart");
+console.log(hearts);
+hearts.forEach((item, i) => {
+  console.log(i, item);
+});
 
-// const hearts = document.querySelectorAll(".heart");
-
-// console.log(hearts);
-
-// hearts.forEach((item) => {
-//   console.log(item);
-// });
-
-// const oneHeart = document.querySelector(".heart");
-// console.log(oneHeart);
+// Queryselector Получаем только первый элемент на странице
+const oneHeart = document.querySelector(".heart");
+console.log(oneHeart);
 
 const box = document.getElementById("box"),
   btns = document.getElementsByTagName("button"),
